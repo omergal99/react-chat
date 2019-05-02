@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/react-chat/static/css/main.16ddf719.chunk.css",
-    "main.js": "/react-chat/static/js/main.624f565f.chunk.js",
-    "main.js.map": "/react-chat/static/js/main.624f565f.chunk.js.map",
+    "main.js": "/react-chat/static/js/main.6bf243f3.chunk.js",
+    "main.js.map": "/react-chat/static/js/main.6bf243f3.chunk.js.map",
     "runtime~main.js": "/react-chat/static/js/runtime~main.14e77f4a.js",
     "runtime~main.js.map": "/react-chat/static/js/runtime~main.14e77f4a.js.map",
     "static/js/2.59d0cd10.chunk.js": "/react-chat/static/js/2.59d0cd10.chunk.js",
     "static/js/2.59d0cd10.chunk.js.map": "/react-chat/static/js/2.59d0cd10.chunk.js.map",
     "index.html": "/react-chat/index.html",
-    "precache-manifest.40142e3331a65dc2228e9aaa42ad5030.js": "/react-chat/precache-manifest.40142e3331a65dc2228e9aaa42ad5030.js",
+    "precache-manifest.af4f75007ea16c4df3c3a9580ea6fc79.js": "/react-chat/precache-manifest.af4f75007ea16c4df3c3a9580ea6fc79.js",
     "service-worker.js": "/react-chat/service-worker.js",
     "static/css/main.16ddf719.chunk.css.map": "/react-chat/static/css/main.16ddf719.chunk.css.map",
     "static/media/App.scss": "/react-chat/static/media/Quando-Regular.849e6795.ttf"
