@@ -4,9 +4,10 @@ var io = require('socket.io')(http);
 
 var app = express();
 
+app.use(express.static('public'));
+
 app.get('/', function (req, res) {
-    // res.send('Hello World')
-    res.send('<h1>Hello world</h1>')
+    res.send('Hello world')
 });
 
 io.on('connection', socket => {

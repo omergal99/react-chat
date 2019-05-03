@@ -1,9 +1,13 @@
 {
+  "homepage": "https://omergal99.github.io/react-chat",
   "name": "react-chat",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "express": "^4.16.4",
+    "gh-pages": "^2.0.1",
+    "mobx": "^5.9.4",
+    "mobx-react": "^5.4.3",
     "node-sass": "^4.12.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
@@ -14,7 +18,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
