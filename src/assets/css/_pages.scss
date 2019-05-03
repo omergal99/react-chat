@@ -1,10 +1,20 @@
 .homePage {
+  max-width: 800px;
+  margin: 0 auto;
+  padding-bottom: 60px;
+
   h1 {
     font-family: merienda, Arial, Helvetica, sans-serif;
     margin: 14px 0 10px 0;
   }
 
+  .type-area {
+    height: 20px;
+    margin: 0 0 4px 0;
+  }
+
   .msg-form {
+    max-width: 800px;
     padding: 10px;
     position: fixed;
     bottom: 0px;
@@ -38,21 +48,30 @@
 
   .msg-list {
     list-style-type: none;
-    padding: 0 10px;
-    margin: 0 0 0 0;
+    padding: 0;
+    margin: 0 10px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    align-items: flex-start;
+    // align-items: flex-start;
+    background-color: #bccad6;
+    border-radius: 2px;
     li {
-      background-color: #bccad6;
       margin: 0 0 4px 0;
       padding: 4px;
       width: auto;
       border-radius: 2px;
-
-      .user{
-          font-weight: bold;
+      display: flex;
+      &.own {
+        justify-content: flex-end;
+        background-color: #dfc7a3;
+      }
+      &.else {
+        background-color: #a3c3df;
+        justify-content: flex-start;
+      }
+      .user {
+        font-weight: bold;
       }
     }
   }

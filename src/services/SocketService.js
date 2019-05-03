@@ -1,40 +1,38 @@
 import io from 'socket.io-client'
 import AppStore from '../store/AppStore';
 
-const serverUrl = process.env.NODE_ENV !== 'development'?
-'' : '//localhost:9090';
+const serverUrl = process.env.NODE_ENV !== 'development' ?
+    '' : '//localhost:9090';
 
 var socket = io(serverUrl);
-// const msgs = [{txt:'hello',from: 'Omer'},{txt:'hii',from: 'Amit'}];
-var user = _randomName();
 
 connectSocket();
 function connectSocket() {
-    socket.on('chat new msg', (txt,from) => {
-        // msgs.push( { txt , from } );
+    socket.on('chat new msg', (txt, from) => {
         AppStore.chatStore.addMsg(txt, from)
+    });
+
+    socket.on('other user type', (user) => {
+        if (user) {
+            AppStore.chatStore.setUserTyping(user)
+        } else {
+            AppStore.chatStore.setUserTyping('')
+        }
     });
 }
 
-// const getMsgs = () => {
-//     return msgs;
-// }
-
 const send = (txt) => {
-    socket.emit('msg sent', txt, user);
+    socket.emit('msg sent', txt, AppStore.userStore.getCurrUser);
+}
+const typing = () => {
+    socket.emit('user type', AppStore.userStore.getCurrUser);
+}
+const stopTyping = () => {
+    socket.emit('user type', '');
 }
 
 export default {
     send,
-    // getMsgs
-}
-
-function _randomName(size = 6) {
-    var text = "";
-    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-
-    for (var i = 0; i < size; i++)
-        text += possible.charAt(Math.floor(Math.random() * possible.length));
-
-    return text;
+    typing,
+    stopTyping
 }

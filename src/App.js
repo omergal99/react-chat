@@ -1,15 +1,22 @@
-import React from 'react';
+// import React from 'react';
+import React, { Component } from 'react';
 import './assets/css/App.scss';
 import AppStore from './store/AppStore';
 
-import HomePage from './pages/HomePage';
+import Chat from './pages/Chat';
 
-function App() {
-  return (
-    <div className="App">
-        <HomePage ChatStore={AppStore.chatStore}/>
-    </div>
-  );
+class App extends Component {
+  componentDidMount() {
+    AppStore.userStore.loadUser()
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <Chat store={AppStore} />
+      </div>
+    );
+  }
 }
 
 export default App;

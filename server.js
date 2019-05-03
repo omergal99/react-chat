@@ -23,6 +23,15 @@ io.on('connection', socket => {
         io.emit('chat new msg', txt , from);
     });
 
+    socket.on('user type', (user) => {
+        if(user){
+            console.log('user type something:', user)
+            io.emit('other user type', user);
+        }else{
+            io.emit('other user type', '');
+        }
+    });
+
 });
 
 const port = process.env.PORT || 9090;
